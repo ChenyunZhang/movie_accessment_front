@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 function MovieDetails(props) {
   const handleVoteup = () => {
@@ -45,7 +46,7 @@ function MovieDetails(props) {
                 <img src={props.movie.poster} />
               </div>
               <div className="content">
-                <a className="header">{props.movie.title}</a>
+                <div className="header">{props.movie.title}</div>
                 <div className="meta">
                   <span>{props.movie.release}</span>
                 </div>
@@ -64,6 +65,7 @@ function MovieDetails(props) {
               </div>
             </div>
           </div>
+          <Link to="/">Go Back</Link>
           <div className="three wide column"></div>
         </div>
       </div>

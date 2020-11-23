@@ -6,9 +6,12 @@ Moviee is a website for users to browser trending movies.
 
 ## Demo
 
-Moviee is built using React as its front-end framework.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Lw9ChGGCJf0"><img src="http://img.youtube.com/vi/Lw9ChGGCJf0/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
-React hooks as well as Redux are utilized in order to manage stateful logic and to create a cohesive UX.
+- Moviee is built using React as its front-end framework.
+
+- React hooks as well as Redux are utilized in order to manage stateful logic and to create a cohesive UX.
 
 ### [Moviee Backend](https://github.com/ChenyunZhang/movie_assessment_backend)
 

@@ -5,7 +5,7 @@
 Moviee is a website for users to browser trending movies.
 
 ## Demo
-<img src="/demo.gif" width="40" height="40" />
+<img src="/demo.gif" width="400" height="400" />
 - Moviee is built using React as its front-end framework.
 
 - React hooks as well as Redux are utilized in order to manage stateful logic and to create a cohesive UX.

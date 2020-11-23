@@ -14,7 +14,7 @@ React hooks as well as Redux are utilized in order to manage stateful logic and 
 
 Moviee's API is built with Ruby on Rails, utilizing PostgreSQL for its database.
 
-NewsMe gathers the trending movies from TMDB Api
+NewsMe gathers the trending movies from TMDB API
 
 ### Installation
 - Clone the repo and CD inside the directory

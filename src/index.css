@@ -16,6 +16,15 @@ div.scrollmenu a {
   text-decoration: none;
 } */
 
+body {
+  background: url("https://images.unsplash.com/photo-1606066702335-7d6e0f976758?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")
+    no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .test-card {
   border-radius: 0.1rem;
   /* height: 31vh; */
@@ -29,7 +38,8 @@ div.scrollmenu a {
 
 div.ten.wide.column.movie-detail-container {
   margin-top: 10vh;
-  background: rgb(175, 192, 18);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: rgba(109, 152, 187, 0.527);
   padding: 2vh;
 }
 
@@ -47,6 +57,7 @@ div.image.rank-image {
   overflow: scroll;
 } */
 
-i.thumbs.up.icon,i.thumbs.down.icon {
+i.thumbs.up.icon,
+i.thumbs.down.icon {
   padding-left: 5px;
 }

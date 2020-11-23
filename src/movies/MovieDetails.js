@@ -1,32 +1,65 @@
 import React from "react";
+import { connect } from "react-redux";
 
 function MovieDetails(props) {
+  const handleVoteup = () => {
+    fetch("http://localhost:3000/voteups", {
+        method: "POST",
+        headers: {
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify({
+            movie_id: props.movie.id,
+        }),
+      })
+        .then((r) => r.json())
+        .then((resp) => {
+            props.updateMoviesUp(resp)
+        });
+  };
+
+  const handleVotedown = () => {
+    fetch("http://localhost:3000/votedowns", {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify({
+          movie_id: props.movie.id,
+      }),
+    })
+      .then((r) => r.json())
+      .then((resp) => {
+          props.updateMoviesDown(resp)
+      });
+  };
+
   return (
     <>
       <div className="ui grid">
         <div className="three wide column"></div>
         <div className="ten wide column movie-detail-container">
           <div className="ui items">
-            <div class="item">
-              <div class="image">
+            <div className="item">
+              <div className="image">
                 <img src={props.movie.poster} />
               </div>
-              <div class="content">
-                <a class="header">{props.movie.title}</a>
-                <div class="meta">
+              <div className="content">
+                <a className="header">{props.movie.title}</a>
+                <div className="meta">
                   <span>{props.movie.release}</span>
                 </div>
-                <div class="description">
+                <div className="description">
                   <p>{props.movie.overview}</p>
                 </div>
-                <div class="extra">{props.movie.original_language}</div>
-                <div className="ui label red">
+                <div className="extra">{props.movie.original_language}</div>
+                <div className="ui label red" onClick={handleVoteup}>
                   {props.movie.voteup.length}
-                  <i class="thumbs up icon"></i>
+                  <i className="thumbs up icon"></i>
                 </div>
-                <div className="ui label blue">
+                <div className="ui label blue" onClick={handleVotedown}>
                   {props.movie.votedown.length}
-                  <i class="thumbs down icon"></i>
+                  <i className="thumbs down icon"></i>
                 </div>
               </div>
             </div>
@@ -34,27 +67,28 @@ function MovieDetails(props) {
           <div className="three wide column"></div>
         </div>
       </div>
-      {/* <div className="content">
-            <p>{props.movie.title}</p>
-            <p>{props.movie.overview}</p>
-            <p>{props.movie.original_Language}</p>
-            <p>{props.movie.release}</p>
-            <p>{props.movie.adult ? `true` : `false`}</p>
-        </div>
-        <div className="content">
-            <span className="right floated">
-            <i className="heart outline like icon"></i>
-            17 likes
-            </span>
-            <i className="comment icon"></i>
-            3 comments
-        </div> 
-        </div>
-        <div className="five wide column"></div>
-        </div>
-        </div> */}
     </>
   );
 }
 
-export default MovieDetails;
+
+const updateMoviesUp = (voteup) => {
+  return {
+    type: "UPDATE_MOVIES_ADD_VOTEUP",
+    payload: voteup,
+  };
+};
+
+const updateMoviesDown = (voteup) => {
+  return {
+    type: "UPDATE_MOVIES_ADD_VOTEDOWN",
+    payload: voteup,
+  };
+};
+
+let mapDispatchToProps = {
+  updateMoviesUp:updateMoviesUp,
+  updateMoviesDown:updateMoviesDown
+};
+
+export default connect(null,mapDispatchToProps)(MovieDetails);

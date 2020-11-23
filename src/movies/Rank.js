@@ -21,7 +21,7 @@ function Rank(props) {
                 {props.movie.adult ? "Adult" : null}
               </span>
               <span className="ui label red">
-                <i class="heart icon"></i>
+                <i className="heart icon"></i>
               </span>
             </div>
             <div className="content">Release Date: {props.movie.release}</div>
